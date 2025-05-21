@@ -7,19 +7,19 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/yourusername/saucedemo_automation.git'
+                git 'https://github.com/mystikyatra/automation-test-web-python.git'
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                sh 'pip install -r requirements.txt'
+                bat 'pip install -r requirements.txt'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'pytest tests/ --maxfail=1 --disable-warnings'
+                bat 'pytest tests/ --maxfail=1 --disable-warnings'
             }
         }
 
