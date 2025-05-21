@@ -1,7 +1,8 @@
 pipeline {
     agent any
+
     environment {
-        PATH = "${env.PATH}"
+        PYTHONPATH = "${env.WORKSPACE}"
     }
 
     stages {
