@@ -31,3 +31,9 @@ pipeline {
         }
     }
 }
+// Overrides tha existing video file.
+stage('Archive Video') {
+    steps {
+        archiveArtifacts artifacts: 'videos/test_run.mp4', fingerprint: true
+    }
+}
