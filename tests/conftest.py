@@ -14,4 +14,3 @@ def record_session_video():
     process = start_recording("videos/test_run.mp4")
     yield
     stop_recording(process)
-
