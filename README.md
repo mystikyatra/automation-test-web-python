@@ -8,4 +8,8 @@ git push -u origin master
 
 # Activate venv
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-.\venv\Scripts\Activate.ps1
+.\venv\Scripts\Activate
+
+# Clear pycache
+Remove-Item -Recurse -Force .\__pycache__\
+

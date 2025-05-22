@@ -68,3 +68,60 @@
 2025-05-22 17:06:55,345 - test_login - INFO - Assertion passed - Product successfully added to cart.
 2025-05-22 17:06:55,456 - test_login - INFO - Cart page opened successfully.
 2025-05-22 17:06:56,012 - test_login - INFO - Payment made successfully and Back to Home page.
+2025-05-22 17:10:01,239 - utils.logger - INFO - Logger initialized successfully.
+2025-05-22 17:10:04,766 - test_login - INFO - Test: Valid Login
+2025-05-22 17:10:05,746 - test_login - INFO - Login successful, redirected to inventory page.
+2025-05-22 17:10:06,966 - test_login - INFO - Clicked 'Add to cart' button.
+2025-05-22 17:10:06,990 - test_login - INFO - Assertion passed - Product successfully added to cart.
+2025-05-22 17:10:07,081 - test_login - INFO - Cart page opened successfully.
+2025-05-22 17:10:07,536 - test_login - INFO - Payment made successfully and Back to Home page.
+2025-05-22 17:18:49,330 - utils.logger - INFO - Logger initialized successfully.
+2025-05-22 17:18:52,933 - test_login - INFO - Test: Valid Login
+2025-05-22 17:18:54,029 - test_login - INFO - Login successful, redirected to inventory page.
+2025-05-22 17:18:55,251 - test_login - INFO - Clicked 'Add to cart' button.
+2025-05-22 17:18:55,278 - test_login - INFO - Assertion passed - Product successfully added to cart.
+2025-05-22 17:18:55,390 - test_login - INFO - Cart page opened successfully.
+2025-05-22 17:18:55,828 - test_login - INFO - Payment made successfully and Back to Home page.
+2025-05-22 17:20:16,108 - utils.logger - INFO - Logger initialized successfully.
+2025-05-22 17:20:19,545 - test_login - INFO - Test: Valid Login
+2025-05-22 17:20:20,594 - test_login - INFO - Login successful, redirected to inventory page.
+2025-05-22 17:20:21,790 - test_login - INFO - Clicked 'Add to cart' button.
+2025-05-22 17:20:21,820 - test_login - INFO - Assertion passed - Product successfully added to cart.
+2025-05-22 17:20:21,937 - test_login - INFO - Cart page opened successfully.
+2025-05-22 17:20:22,411 - test_login - INFO - Payment made successfully and Back to Home page.
+2025-05-22 17:24:16,033 - utils.logger - INFO - Logger initialized successfully.
+2025-05-22 17:25:45,716 - utils.logger - INFO - Logger initialized successfully.
+2025-05-22 17:25:49,015 - test_login - INFO - Test: Valid Login
+2025-05-22 17:25:49,904 - test_login - INFO - Login successful, redirected to inventory page.
+2025-05-22 17:25:51,084 - test_login - INFO - Clicked 'Add to cart' button.
+2025-05-22 17:25:51,107 - test_login - INFO - Assertion passed - Product successfully added to cart.
+2025-05-22 17:25:51,208 - test_login - INFO - Cart page opened successfully.
+2025-05-22 17:25:51,623 - test_login - INFO - Payment made successfully and Back to Home page.
+2025-05-22 17:27:25,996 - utils.logger - INFO - Logger initialized successfully.
+2025-05-22 17:27:29,529 - test_login - INFO - Test: Valid Login
+2025-05-22 17:27:30,523 - test_login - INFO - Login successful, redirected to inventory page.
+2025-05-22 17:27:31,782 - test_login - INFO - Clicked 'Add to cart' button.
+2025-05-22 17:27:31,804 - test_login - INFO - Assertion passed - Product successfully added to cart.
+2025-05-22 17:27:31,916 - test_login - INFO - Cart page opened successfully.
+2025-05-22 17:27:32,581 - test_login - INFO - Payment made successfully and Back to Home page.
+2025-05-22 17:29:32,362 - utils.logger - INFO - Logger initialized successfully.
+2025-05-22 17:29:35,817 - test_login - INFO - Test: Valid Login
+2025-05-22 17:29:36,833 - test_login - INFO - Login successful, redirected to inventory page.
+2025-05-22 17:29:38,038 - test_login - INFO - Clicked 'Add to cart' button.
+2025-05-22 17:29:38,065 - test_login - INFO - Assertion passed - Product successfully added to cart.
+2025-05-22 17:29:38,155 - test_login - INFO - Cart page opened successfully.
+2025-05-22 17:29:38,643 - test_login - INFO - Payment made successfully and Back to Home page.
+2025-05-22 17:30:25,942 - utils.logger - INFO - Logger initialized successfully.
+2025-05-22 17:30:29,304 - test_login - INFO - Test: Valid Login
+2025-05-22 17:30:30,281 - test_login - INFO - Login successful, redirected to inventory page.
+2025-05-22 17:30:31,489 - test_login - INFO - Clicked 'Add to cart' button.
+2025-05-22 17:30:31,519 - test_login - INFO - Assertion passed - Product successfully added to cart.
+2025-05-22 17:30:31,630 - test_login - INFO - Cart page opened successfully.
+2025-05-22 17:30:32,160 - test_login - INFO - Payment made successfully and Back to Home page.
+2025-05-22 17:32:52,827 - utils.logger - INFO - Logger initialized successfully.
+2025-05-22 17:32:56,318 - test_login - INFO - Test: Valid Login
+2025-05-22 17:32:57,358 - test_login - INFO - Login successful, redirected to inventory page.
+2025-05-22 17:32:58,550 - test_login - INFO - Clicked 'Add to cart' button.
+2025-05-22 17:32:58,578 - test_login - INFO - Assertion passed - Product successfully added to cart.
+2025-05-22 17:32:58,675 - test_login - INFO - Cart page opened successfully.
+2025-05-22 17:32:59,127 - test_login - INFO - Payment made successfully and Back to Home page.
