@@ -20,7 +20,7 @@ class CheckOut:
     POSTAL_CODE = (By.ID, "postal-code")
     CONTINUE_BUTTON = (By.CSS_SELECTOR, ".btn_primary.cart_button")
     FINISH_BUTTON = (By.CSS_SELECTOR, ".btn_action.cart_button")
-    BACK_HOME = (By.ID, "back-to-products")
+    #BACK_HOME = (By.ID, "back-to-products")
 
 
 

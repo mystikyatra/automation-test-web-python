@@ -48,4 +48,4 @@ class LoginPage:
         self.driver.find_element(*CheckOut.POSTAL_CODE).send_keys("12345")
         self.driver.find_element(*CheckOut.CONTINUE_BUTTON).click()
         self.driver.find_element(*CheckOut.FINISH_BUTTON).click()
-        self.driver.find_element(*CheckOut.BACK_HOME).click()
+        #self.driver.find_element(*CheckOut.BACK_HOME).click()
