@@ -8,7 +8,7 @@ class LoginLocators:
 class InventoryLocators:
     ADD_ITEM = (By.XPATH, "//div[text()='Test.allTheThings() T-Shirt (Red)']")
     ADD_PRODUCT = (By.CSS_SELECTOR, "button.btn_primary.btn_inventory")
-    REMOVE_BUTTON = (By.XPATH, "//button[text()='Remove']")
+    REMOVE_BUTTON = (By.CSS_SELECTOR, ".btn_secondary.btn_inventory")
 
 class GoToCartLocators:
     GOTOCART = (By.XPATH, "//a[@data-test='shopping-cart-link']")
