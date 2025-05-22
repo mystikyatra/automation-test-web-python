@@ -24,13 +24,23 @@ class LoginPage:
         element.click()
 
     def inventory_page(self):
-        self.scroll_to_element_and_click(InventoryLocators.ADD_PRODUCT)
+        self.scroll_to_element_and_click(InventoryLocators.ADD_ITEM)
+        self.driver.find_element(*InventoryLocators.ADD_PRODUCT).click()
     
     def remove_product(self):
-    # Assertion to ensure if the product was not added to cart
-        RemoveButton = self.driver.find_element(*InventoryLocators.REMOVE_BUTTON)
-        assert RemoveButton.is_displayed(), "Product was added to cart"
+        # Assertion to ensure if the product was not added to cart
+        remove_button = self.driver.find_element(*InventoryLocators.REMOVE_BUTTON)
+        assert remove_button.is_displayed(), "Product was added to cart"
     
     def go_to_cart(self):
         self.driver.find_element(*GoToCartLocators.GOTOCART).click()
-
+    
+    def checkout(self):
+        self.driver.find_element(*CheckOut.CHECKOUT_BUTTON).click()
+        logger.info("Clicked 'Checkout' button.")
+        self.driver.find_element(*CheckOut.FIRST_NAME).send_keys("John")
+        self.driver.find_element(*CheckOut.LAST_NAME).send_keys("Doe")
+        self.driver.find_element(*CheckOut.POSTAL_CODE).send_keys("12345")
+        self.driver.find_element(*CheckOut.CONTINUE_BUTTON).click()
+        self.driver.find_element(*CheckOut.FINISH_BUTTON).click()
+        self.driver.find_element(*CheckOut.BACK_HOME).click()

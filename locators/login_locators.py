@@ -1,11 +1,26 @@
+from selenium.webdriver.common.by import By
+
 class LoginLocators:
-    USERNAME_INPUT = ("id", "user-name")
-    PASSWORD_INPUT = ("id", "password")
-    LOGIN_BUTTON = ("id", "login-button")
+    USERNAME_INPUT = (By.ID, "user-name")
+    PASSWORD_INPUT = (By.ID, "password")
+    LOGIN_BUTTON = (By.ID, "login-button")
 
 class InventoryLocators:
-    ADD_PRODUCT = ("id", "add-to-cart-test.allthethings()-t-shirt-(red)")
-    REMOVE_BUTTON = ("xpath", "//button[text()='Remove']")
+    ADD_ITEM = (By.XPATH, "//div[text()='Test.allTheThings() T-Shirt (Red)']")
+    ADD_PRODUCT = (By.CSS_SELECTOR, "button.btn_primary.btn_inventory")
+    REMOVE_BUTTON = (By.XPATH, "//button[text()='Remove']")
 
 class GoToCartLocators:
-    GOTOCART= ("xpath", "//a[@data-test='shopping-cart-link']")
+    GOTOCART = (By.XPATH, "//a[@data-test='shopping-cart-link']")
+
+class CheckOut:
+    CHECKOUT_BUTTON = (By.CSS_SELECTOR, ".btn_action.checkout_button")
+    FIRST_NAME = (By.ID, "first-name")
+    LAST_NAME = (By.ID, "last-name")
+    POSTAL_CODE = (By.ID, "postal-code")
+    CONTINUE_BUTTON = (By.CSS_SELECTOR, ".btn_primary.cart_button")
+    FINISH_BUTTON = (By.CSS_SELECTOR, ".btn_action.cart_button")
+    BACK_HOME = (By.ID, "back-to-products")
+
+
+
