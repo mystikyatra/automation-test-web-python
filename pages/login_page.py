@@ -24,7 +24,7 @@ class LoginPage:
         element.click()
 
     def inventory_page(self):
-        self.scroll_to_element_and_click(*InventoryLocators.ADD_PRODUCT)
+        self.scroll_to_element_and_click(InventoryLocators.ADD_PRODUCT)
     
     def remove_product(self):
     # Assertion to ensure if the product was not added to cart

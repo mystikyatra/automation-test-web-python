@@ -14,7 +14,7 @@ def test_valid_login(driver):
     
     login_page = LoginPage(driver)
     login_page.login(config.USERNAME, config.PASSWORD)
-    time.sleep(2)
+    time.sleep(5)
 
     logger.info("Login successful, redirected to inventory page.")
     
