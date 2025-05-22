@@ -32,7 +32,12 @@ class LoginPage:
         remove_button = self.driver.find_element(*InventoryLocators.REMOVE_BUTTON)
         assert remove_button.is_displayed(), "Product was added to cart"
     
+    # def go_to_cart(self):
+    #     self.driver.find_element(*GoToCartLocators.GOTOCART).click()
     def go_to_cart(self):
+        WebDriverWait(self.driver, 10).until(
+        EC.presence_of_element_located(GoToCartLocators.GOTOCART)
+    )
         self.driver.find_element(*GoToCartLocators.GOTOCART).click()
     
     def checkout(self):
