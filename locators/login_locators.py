@@ -11,7 +11,6 @@ class InventoryLocators:
     REMOVE_BUTTON = (By.CSS_SELECTOR, ".btn_secondary.btn_inventory")
 
 class GoToCartLocators:
-    #GOTOCART = (By.XPATH, "//a[@data-test='shopping-cart-link']")
     GOTOCART = (By.ID, "shopping_cart_container")
 
 class CheckOut:
