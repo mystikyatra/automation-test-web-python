@@ -32,8 +32,6 @@ class LoginPage:
         remove_button = self.driver.find_element(*InventoryLocators.REMOVE_BUTTON)
         assert remove_button.is_displayed(), "Product was added to cart"
     
-    # def go_to_cart(self):
-    #     self.driver.find_element(*GoToCartLocators.GOTOCART).click()
     def go_to_cart(self):
         WebDriverWait(self.driver, 10).until(
         EC.presence_of_element_located(GoToCartLocators.GOTOCART)
@@ -48,4 +46,3 @@ class LoginPage:
         self.driver.find_element(*CheckOut.POSTAL_CODE).send_keys("12345")
         self.driver.find_element(*CheckOut.CONTINUE_BUTTON).click()
         self.driver.find_element(*CheckOut.FINISH_BUTTON).click()
-        #self.driver.find_element(*CheckOut.BACK_HOME).click()
