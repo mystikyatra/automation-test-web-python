@@ -1,0 +1,9 @@
+2025-05-23 11:49:25,849 - utils.logger - INFO - Logger initialized successfully.
+2025-05-23 11:49:29,524 - generic_test - INFO - Opening file upload page
+2025-05-23 11:49:36,372 - generic_test - INFO - File uploaded successfully
+2025-05-23 11:49:42,459 - test_login - INFO - Test: Valid Login
+2025-05-23 11:49:43,882 - test_login - INFO - Login successful, redirected to inventory page.
+2025-05-23 11:49:45,499 - test_login - INFO - Clicked 'Add to cart' button.
+2025-05-23 11:49:45,538 - test_login - INFO - Assertion passed - Product successfully added to cart.
+2025-05-23 11:49:45,743 - test_login - INFO - Cart page opened successfully.
+2025-05-23 11:49:46,604 - test_login - INFO - Payment made successfully and Back to Home page.
