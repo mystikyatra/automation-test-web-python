@@ -11,7 +11,6 @@ logger = setup_logging(__name__)
 
 def test_valid_login(driver):
     logger.info("Test: Valid Login")
-    
     driver.get(config.BASE_URL)
     
     login_page = LoginPage(driver)
@@ -21,7 +20,6 @@ def test_valid_login(driver):
     WebDriverWait(driver, 10).until(
         EC.visibility_of_element_located((By.CSS_SELECTOR, "button.btn_primary.btn_inventory"))
     )
-
     logger.info("Login successful, redirected to inventory page.")
     
     # Scroll to product and click "Add to cart"
@@ -35,4 +33,4 @@ def test_valid_login(driver):
     logger.info("Cart page opened successfully.")
 
     login_page.checkout()
-    logger.info("Payment made successfully and Back to Home page.")
+    logger.info("Payment made successfully.")

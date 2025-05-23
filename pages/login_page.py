@@ -1,12 +1,11 @@
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators.login_locators import *
+from utils.logger import setup_logging
 import time
-import logging
 
-logger = logging.getLogger(__name__)
+logger = setup_logging(__name__)
 
 class LoginPage:
     def __init__(self, driver):

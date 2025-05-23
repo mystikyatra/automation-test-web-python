@@ -1,5 +1,10 @@
 from selenium.webdriver.common.by import By
 
+class AddRemove:
+    ADD_REMOVE_LINK = (By.LINK_TEXT, "Add/Remove Elements")
+    ADD_ELEMENT_BUTTON = (By.XPATH, "//button[text()='Add Element']")
+    DELETE_BUTTON = (By.CSS_SELECTOR, "button.added-manually")
+
 class FileUploadLocators:
     # File Upload
     FILE_UPLOAD_LINK = (By.LINK_TEXT, "File Upload")

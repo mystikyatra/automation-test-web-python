@@ -2,3 +2,4 @@ selenium
 python-dotenv
 pytest
 webdriver-manager
+pytest-order
