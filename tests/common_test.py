@@ -1,6 +1,6 @@
 import pytest
 from config import config
-from pages.common_page import FileUploadPage, AddRemoveElementsPage
+from pages.common_page import *
 from utils.logger import setup_logging
 
 logger = setup_logging(__name__)
@@ -24,3 +24,12 @@ def test_file_upload(driver):
 
     assert upload_page.is_upload_successful(), "File upload failed"
     logger.info("File uploaded successfully")
+
+@pytest.mark.order(3)
+def test_extract_challenging_dom_table(driver):
+    logger.info("Opening Challenging DOM page")
+    driver.get(config.GENERIC_URL)
+    report_table_page = ReportTablePage(driver)
+    report_table_page.test_extract_challenging_dom_table(driver)
+    logger.info("Challenging DOM table extraction test passed")
+

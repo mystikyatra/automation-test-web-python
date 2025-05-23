@@ -11,3 +11,10 @@ class FileUploadLocators:
     CHOOSE_FILE = (By.ID, "file-upload")
     UPLOAD_BUTTON = (By.ID, "file-submit")
     FILE_UPLOADED_MESSAGE = (By.XPATH, "//h3[contains(text(), 'File Uploaded')]")
+
+class ReportTableLocators:
+    # Report Table
+    REPORT_TABLE_LINK = (By.LINK_TEXT, "Challenging DOM")
+    TABLE = (By.XPATH, "//div[@class='large-10 columns']//table")
+    ROWS = (By.XPATH, "//div[@class='large-10 columns']//table/tbody/tr")
+    CELLS = (By.TAG_NAME, "td")
