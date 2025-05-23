@@ -3,3 +3,4 @@ python-dotenv
 pytest
 webdriver-manager
 pytest-order
+pytest-xdist
