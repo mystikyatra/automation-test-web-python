@@ -64,3 +64,24 @@ class ReportTablePage:
         assert last_row == expected_last_row, f"Last row does not match. Expected: {expected_last_row}, Found: {last_row}"
 
         logger.info("First and last row assertions passed.")
+
+class CheckBoxesPage:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def check_checkboxes(self):
+        self.driver.find_element(*CheckBoxesLocators.CHECKBOX_PAGE).click()
+        checkbox1 = self.driver.find_element(*CheckBoxesLocators.CHECKBOX_1)
+        checkbox2 = self.driver.find_element(*CheckBoxesLocators.CHECKBOX_2)
+
+        if not checkbox1.is_selected():
+            checkbox1.click()
+            logger.info("Checkbox 1 was not selected, now it is selected.")
+        else:
+            logger.info("Checkbox 1 was already selected.")
+
+        if checkbox2.is_selected():
+            checkbox2.click()
+            logger.info("Checkbox 2 was selected, now it is deselected.")
+        else:
+            logger.info("Checkbox 2 was already deselected.")

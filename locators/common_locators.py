@@ -18,3 +18,9 @@ class ReportTableLocators:
     TABLE = (By.XPATH, "//div[@class='large-10 columns']//table")
     ROWS = (By.XPATH, "//div[@class='large-10 columns']//table/tbody/tr")
     CELLS = (By.TAG_NAME, "td")
+
+class CheckBoxesLocators:
+    # Checkboxes
+    CHECKBOX_PAGE = (By.LINK_TEXT, "Checkboxes")
+    CHECKBOX_1 = (By.XPATH, '//form[@id="checkboxes"]/input[1]')
+    CHECKBOX_2 = (By.XPATH, '//form[@id="checkboxes"]/input[2]')

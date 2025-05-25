@@ -33,3 +33,12 @@ def test_extract_challenging_dom_table(driver):
     report_table_page.test_extract_challenging_dom_table(driver)
     logger.info("Challenging DOM table extraction test passed")
 
+@pytest.mark.order(4)
+def test_checkboxes(driver):
+    logger.info("Opening Checkboxes page")
+    driver.get(config.GENERIC_URL)
+
+    checkboxes_page = CheckBoxesPage(driver)
+    checkboxes_page.check_checkboxes()
+    logger.info("Checkboxes test passed")
+
