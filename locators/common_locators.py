@@ -35,3 +35,9 @@ class DragAndDropLocators:
     DRAG_AND_DROP_PAGE = (By.LINK_TEXT, "Drag and Drop")
     DRAG_ELEMENT = (By.ID, "column-a")
     DROP_ELEMENT = (By.ID, "column-b")
+
+class DropDownLocators:
+    # Dropdown
+    DROPDOWN_PAGE = (By.LINK_TEXT, "Dropdown")
+    DROPDOWN_SELECT = (By.ID, "dropdown")
+    

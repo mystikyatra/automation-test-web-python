@@ -61,3 +61,12 @@ def test_drag_and_drop(driver):
     drag_and_drop_page = DragAndDropPage(driver)
     drag_and_drop_page.drag_and_drop()
     logger.info("Drag and Drop test passed")
+
+@pytest.mark.order(7)
+def test_dropdown(driver):
+    logger.info("Opening Dropdown page")
+    driver.get(config.GENERIC_URL)
+
+    dropdown_page = DropDownPage(driver)
+    dropdown_page.select_option("Option 1")
+    logger.info("Dropdown option selected successfully")

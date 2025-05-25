@@ -133,3 +133,19 @@ class DragAndDropPage:
         actions.drag_and_drop(drag_element, drop_element).perform()
         time.sleep(2)  # Wait for the action to complete
         logger.info("Performed drag and drop action.")
+
+class DropDownPage:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def select_option(self, visible_text):  # changed method name to match test
+        self.driver.find_element(*DropDownLocators.DROPDOWN_PAGE).click()
+        dropdown = self.driver.find_element(*DropDownLocators.DROPDOWN_SELECT)
+        options = dropdown.find_elements(By.TAG_NAME, "option")
+        
+        for option in options:
+            if option.text.strip() == visible_text:
+                option.click()
+                logger.info(f"Selected dropdown option: {visible_text}")
+                return
+        logger.warning(f"Option '{visible_text}' not found in the dropdown.")
