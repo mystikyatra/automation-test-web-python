@@ -24,3 +24,8 @@ class CheckBoxesLocators:
     CHECKBOX_PAGE = (By.LINK_TEXT, "Checkboxes")
     CHECKBOX_1 = (By.XPATH, '//form[@id="checkboxes"]/input[1]')
     CHECKBOX_2 = (By.XPATH, '//form[@id="checkboxes"]/input[2]')
+
+class DisappearingElementsLocators:
+    # Disappearing Elements
+    DISAPPEARING_ELEMENTS_PAGE = (By.LINK_TEXT, "Disappearing Elements")
+    MENU = (By.LINK_TEXT, "Gallery")

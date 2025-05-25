@@ -42,3 +42,13 @@ def test_checkboxes(driver):
     checkboxes_page.check_checkboxes()
     logger.info("Checkboxes test passed")
 
+@pytest.mark.order(5)
+def test_disappearing_elements(driver):
+    logger.info("Opening Disappearing Elements page")
+    driver.get(config.GENERIC_URL)
+
+    disappearing_elements_page = DisappearingElementsPage(driver)
+    disappearing_elements_page.navigate_to_disappearing_elements()
+
+    found = disappearing_elements_page.find_and_click_gallery_menu()
+    assert found, "Failed to locate 'Gallery' menu after multiple refreshes."

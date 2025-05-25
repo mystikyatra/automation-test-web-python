@@ -1,4 +1,6 @@
 import os
+import time
+from selenium.common.exceptions import NoSuchElementException
 from utils.logger import setup_logging
 from locators.common_locators import *
 
@@ -85,3 +87,31 @@ class CheckBoxesPage:
             logger.info("Checkbox 2 was selected, now it is deselected.")
         else:
             logger.info("Checkbox 2 was already deselected.")
+
+class DisappearingElementsPage:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def navigate_to_disappearing_elements(self):
+        self.driver.find_element(*DisappearingElementsLocators.DISAPPEARING_ELEMENTS_PAGE).click()
+        logger.info("Navigated to Disappearing Elements page.")
+        self.driver.refresh()
+
+    def find_and_click_gallery_menu(self, max_retries=6, wait_between_retries=2):
+        for attempt in range(1, max_retries + 1):
+            self.driver.refresh()
+            logger.info(f"[Attempt {attempt}] Page refreshed.")
+
+            time.sleep(wait_between_retries)  # allow dynamic elements to re-render
+
+            try:
+                gallery = self.driver.find_element(*DisappearingElementsLocators.MENU)
+                if gallery.is_displayed():
+                    logger.info(f"'Gallery' menu found and is visible on attempt {attempt}. Clicking it.")
+                    gallery.click()
+                    return True
+            except NoSuchElementException:
+                logger.info(f"'Gallery' not found on attempt {attempt}. Retrying...")
+
+        logger.warning(f"'Gallery' menu did not appear after {max_retries} attempts.")
+        return False
