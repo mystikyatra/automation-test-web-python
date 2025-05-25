@@ -29,3 +29,9 @@ class DisappearingElementsLocators:
     # Disappearing Elements
     DISAPPEARING_ELEMENTS_PAGE = (By.LINK_TEXT, "Disappearing Elements")
     MENU = (By.LINK_TEXT, "Gallery")
+
+class DragAndDropLocators:
+    # Drag and Drop
+    DRAG_AND_DROP_PAGE = (By.LINK_TEXT, "Drag and Drop")
+    DRAG_ELEMENT = (By.ID, "column-a")
+    DROP_ELEMENT = (By.ID, "column-b")

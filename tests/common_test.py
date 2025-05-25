@@ -52,3 +52,12 @@ def test_disappearing_elements(driver):
 
     found = disappearing_elements_page.find_and_click_gallery_menu()
     assert found, "Failed to locate 'Gallery' menu after multiple refreshes."
+
+pytest.mark.order(6)
+def test_drag_and_drop(driver):
+    logger.info("Opening Drag and Drop page")
+    driver.get(config.GENERIC_URL)
+
+    drag_and_drop_page = DragAndDropPage(driver)
+    drag_and_drop_page.drag_and_drop()
+    logger.info("Drag and Drop test passed")

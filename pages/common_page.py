@@ -1,6 +1,7 @@
 import os
 import time
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.action_chains import ActionChains
 from utils.logger import setup_logging
 from locators.common_locators import *
 
@@ -115,3 +116,20 @@ class DisappearingElementsPage:
 
         logger.warning(f"'Gallery' menu did not appear after {max_retries} attempts.")
         return False
+
+class DragAndDropPage:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def drag_and_drop(self):
+        self.driver.find_element(*DragAndDropLocators.DRAG_AND_DROP_PAGE).click()
+        logger.info("Opened Drag and Drop page.")
+
+        drag_element = self.driver.find_element(*DragAndDropLocators.DRAG_ELEMENT)
+        drop_element = self.driver.find_element(*DragAndDropLocators.DROP_ELEMENT)
+
+        # Perform drag and drop action
+        actions = ActionChains(self.driver)
+        actions.drag_and_drop(drag_element, drop_element).perform()
+        time.sleep(2)  # Wait for the action to complete
+        logger.info("Performed drag and drop action.")
