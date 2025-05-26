@@ -1,3 +1,2 @@
 .env
-Start-Jenkins-WithScreenRecording.ps1
-README.md
+*.ps1
