@@ -23,3 +23,10 @@ PS D:\automation-tst-projects\automation-test-web-python> powershell.exe -Execut
 
 # Install requirements.txt
 pip install -r .\requirements.txt
+
+# Build periodically in Jenkins (0 13 * * *)
+    - 0 → minute 0
+    - 13 → hour 13 (PM)
+    - * → every day
+    - * → every month
+    - * → every day of the week
