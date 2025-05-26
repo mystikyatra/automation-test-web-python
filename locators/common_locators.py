@@ -40,4 +40,11 @@ class DropDownLocators:
     # Dropdown
     DROPDOWN_PAGE = (By.LINK_TEXT, "Dropdown")
     DROPDOWN_SELECT = (By.ID, "dropdown")
+
+class DynamicContentLocators:
+    # Dynamic Content
+    DYNAMIC_CONTROLS_PAGE = (By.LINK_TEXT, "Dynamic Content")
+    REFRESH_CONTENT = (By.LINK_TEXT, "click here")
+    CONTENT = (By.CSS_SELECTOR, "div.large-10.columns")
+
     

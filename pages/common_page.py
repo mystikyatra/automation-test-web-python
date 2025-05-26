@@ -4,6 +4,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.action_chains import ActionChains
 from utils.logger import setup_logging
 from locators.common_locators import *
+from pages.base_page import BasePage
 
 logger = setup_logging(__name__)
 
@@ -149,3 +150,24 @@ class DropDownPage:
                 logger.info(f"Selected dropdown option: {visible_text}")
                 return
         logger.warning(f"Option '{visible_text}' not found in the dropdown.")
+
+class DynamicContentPage(BasePage):
+    def navigate_to_dynamic_controls(self):
+        logger.info("Navigating to Dynamic Controls page")
+        self.click(DynamicContentLocators.DYNAMIC_CONTROLS_PAGE)
+        logger.info("Clicked Dynamic Controls link")
+
+    def click_refresh(self):
+        self.click(DynamicContentLocators.REFRESH_CONTENT)
+        logger.info("Clicked refresh link")
+
+    def get_content_text(self):
+        text = self.get_text(DynamicContentLocators.CONTENT)
+        logger.info(f"Retrieved content text: {text[:50]}...")  # Log first 50 chars
+        return text
+
+    def is_content_displayed(self):
+        visible = self.is_element_visible(DynamicContentLocators.CONTENT)
+        logger.info(f"Content visibility status: {visible}")
+        return visible
+    
