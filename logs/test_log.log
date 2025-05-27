@@ -1,0 +1,85 @@
+2025-05-27 11:03:03,944 - utils.logger - INFO - Logger initialized successfully.
+2025-05-27 11:03:07,326 - common_test - INFO - 1. Opening ADD/REMOVE ElEMENTS page !!!
+2025-05-27 11:03:11,570 - pages.common_page - INFO - Performed add and remove actions on the Add/Remove Elements page.
+2025-05-27 11:03:11,571 - common_test - INFO - Add/Remove Elements test passed
+2025-05-27 11:03:16,824 - common_test - INFO - 2. Opening FILE UPLOAD page !!!
+2025-05-27 11:03:21,276 - pages.common_page - INFO - Uploaded file from path: D:\automation-tst-projects\automation-test-web-python\data\upload_excel_file.xlsx
+2025-05-27 11:03:21,790 - common_test - INFO - File uploaded successfully
+2025-05-27 11:03:27,072 - common_test - INFO - 3. Opening CHALLENGING DOM TABLE page !!!
+2025-05-27 11:03:31,212 - pages.common_page - INFO - Opened Report Table page.
+2025-05-27 11:03:31,275 - pages.common_page - INFO - Number of rows in the table: 10
+2025-05-27 11:03:31,358 - pages.common_page - INFO - Row 1: ['Iuvaret0', 'Apeirian0', 'Adipisci0', 'Definiebas0', 'Consequuntur0', 'Phaedrum0', 'editdelete']
+2025-05-27 11:03:31,419 - pages.common_page - INFO - Row 2: ['Iuvaret1', 'Apeirian1', 'Adipisci1', 'Definiebas1', 'Consequuntur1', 'Phaedrum1', 'editdelete']
+2025-05-27 11:03:31,490 - pages.common_page - INFO - Row 3: ['Iuvaret2', 'Apeirian2', 'Adipisci2', 'Definiebas2', 'Consequuntur2', 'Phaedrum2', 'editdelete']
+2025-05-27 11:03:31,569 - pages.common_page - INFO - Row 4: ['Iuvaret3', 'Apeirian3', 'Adipisci3', 'Definiebas3', 'Consequuntur3', 'Phaedrum3', 'editdelete']
+2025-05-27 11:03:31,637 - pages.common_page - INFO - Row 5: ['Iuvaret4', 'Apeirian4', 'Adipisci4', 'Definiebas4', 'Consequuntur4', 'Phaedrum4', 'editdelete']
+2025-05-27 11:03:31,693 - pages.common_page - INFO - Row 6: ['Iuvaret5', 'Apeirian5', 'Adipisci5', 'Definiebas5', 'Consequuntur5', 'Phaedrum5', 'editdelete']
+2025-05-27 11:03:31,756 - pages.common_page - INFO - Row 7: ['Iuvaret6', 'Apeirian6', 'Adipisci6', 'Definiebas6', 'Consequuntur6', 'Phaedrum6', 'editdelete']
+2025-05-27 11:03:31,820 - pages.common_page - INFO - Row 8: ['Iuvaret7', 'Apeirian7', 'Adipisci7', 'Definiebas7', 'Consequuntur7', 'Phaedrum7', 'editdelete']
+2025-05-27 11:03:31,882 - pages.common_page - INFO - Row 9: ['Iuvaret8', 'Apeirian8', 'Adipisci8', 'Definiebas8', 'Consequuntur8', 'Phaedrum8', 'editdelete']
+2025-05-27 11:03:32,008 - pages.common_page - INFO - Row 10: ['Iuvaret9', 'Apeirian9', 'Adipisci9', 'Definiebas9', 'Consequuntur9', 'Phaedrum9', 'editdelete']
+2025-05-27 11:03:32,009 - pages.common_page - INFO - First and last row assertions passed.
+2025-05-27 11:03:32,009 - common_test - INFO - Challenging DOM table extraction test passed
+2025-05-27 11:03:37,336 - common_test - INFO - 4. Opening CHECKBOXES page !!!
+2025-05-27 11:03:41,857 - pages.common_page - INFO - Checkbox 1 was not selected, now it is selected.
+2025-05-27 11:03:41,935 - pages.common_page - INFO - Checkbox 2 was selected, now it is deselected.
+2025-05-27 11:03:41,936 - common_test - INFO - Checkboxes test passed
+2025-05-27 11:03:47,266 - common_test - INFO - 5. Opening DISAPPEARING ELEMENTS page !!!
+2025-05-27 11:03:51,398 - pages.common_page - INFO - Navigated to Disappearing Elements page.
+2025-05-27 11:03:52,070 - pages.common_page - INFO - [Attempt 1] Page refreshed.
+2025-05-27 11:03:54,094 - pages.common_page - INFO - 'Gallery' menu found and is visible on attempt 1. Clicking it.
+2025-05-27 11:04:00,517 - common_test - INFO - 6. Opening DRAG AND DROP page !!!
+2025-05-27 11:04:04,819 - pages.common_page - INFO - Opened Drag and Drop page.
+2025-05-27 11:04:07,413 - pages.common_page - INFO - Performed drag and drop action.
+2025-05-27 11:04:07,413 - common_test - INFO - Drag and Drop test passed
+2025-05-27 11:04:13,271 - common_test - INFO - 7. Opening DROPDOWN page !!!
+2025-05-27 11:04:17,400 - pages.common_page - INFO - Selected dropdown option: Option 1
+2025-05-27 11:04:17,400 - common_test - INFO - Dropdown option selected successfully
+2025-05-27 11:04:22,720 - common_test - INFO - 8. Opening DYNAMIC CONTENT REFRESH page !!!
+2025-05-27 11:04:26,476 - common_test - INFO - Navigating to Dynamic Controls page
+2025-05-27 11:04:26,477 - pages.common_page - INFO - Navigating to Dynamic Controls page
+2025-05-27 11:04:27,232 - pages.common_page - INFO - Clicked Dynamic Controls link
+2025-05-27 11:04:27,232 - common_test - INFO - Clicking refresh link - Attempt 1
+2025-05-27 11:04:28,233 - pages.common_page - INFO - Clicked refresh link
+2025-05-27 11:04:28,289 - pages.common_page - INFO - Retrieved content text: Accusantium eius ut architecto neque vel voluptate...
+2025-05-27 11:04:28,289 - common_test - INFO - Content after click 1: Accusantium eius ut architecto neque vel voluptatem vel nam eos minus ullam dolores voluptates enim sed voluptatem rerum qui sapiente nesciunt aspernatur et accusamus laboriosam culpa tenetur hic aut placeat error autem qui sunt.
+
+
+Omnis fugiat porro vero quas tempora quis eveniet ab officia cupiditate culpa repellat debitis itaque possimus odit dolorum et iste quibusdam quis dicta autem sint vel quo vel consequuntur dolorem nihil neque sunt aperiam blanditiis.
+
+
+Eligendi et dicta delectus ipsam dolorem quos debitis iste minima aut qui deleniti cumque ad expedita alias maiores nihil voluptatem quia voluptatem perspiciatis quo eos optio nostrum molestias voluptatum quis ut et.
+2025-05-27 11:04:28,289 - common_test - INFO - Clicking refresh link - Attempt 2
+2025-05-27 11:04:28,692 - pages.common_page - INFO - Clicked refresh link
+2025-05-27 11:04:28,750 - pages.common_page - INFO - Retrieved content text: Accusantium eius ut architecto neque vel voluptate...
+2025-05-27 11:04:28,751 - common_test - INFO - Content after click 2: Accusantium eius ut architecto neque vel voluptatem vel nam eos minus ullam dolores voluptates enim sed voluptatem rerum qui sapiente nesciunt aspernatur et accusamus laboriosam culpa tenetur hic aut placeat error autem qui sunt.
+
+
+Omnis fugiat porro vero quas tempora quis eveniet ab officia cupiditate culpa repellat debitis itaque possimus odit dolorum et iste quibusdam quis dicta autem sint vel quo vel consequuntur dolorem nihil neque sunt aperiam blanditiis.
+
+
+Praesentium consequatur temporibus at est aut incidunt rerum accusantium quis fuga labore nemo dolores aut dolor sit vel quidem alias quia sequi architecto libero mollitia quia vitae rerum dignissimos omnis ex quos molestias neque.
+2025-05-27 11:04:28,751 - common_test - INFO - Clicking refresh link - Attempt 3
+2025-05-27 11:04:29,171 - pages.common_page - INFO - Clicked refresh link
+2025-05-27 11:04:29,206 - pages.common_page - INFO - Retrieved content text: Accusantium eius ut architecto neque vel voluptate...
+2025-05-27 11:04:29,206 - common_test - INFO - Content after click 3: Accusantium eius ut architecto neque vel voluptatem vel nam eos minus ullam dolores voluptates enim sed voluptatem rerum qui sapiente nesciunt aspernatur et accusamus laboriosam culpa tenetur hic aut placeat error autem qui sunt.
+
+
+Omnis fugiat porro vero quas tempora quis eveniet ab officia cupiditate culpa repellat debitis itaque possimus odit dolorum et iste quibusdam quis dicta autem sint vel quo vel consequuntur dolorem nihil neque sunt aperiam blanditiis.
+
+
+Asperiores dolores rem aliquam consequatur alias est qui impedit et incidunt quisquam laborum ipsa harum rerum atque sed suscipit rerum non placeat et eius minima dolorum ipsam molestiae officia quod molestias natus illo veritatis enim.
+2025-05-27 11:04:29,206 - common_test - INFO - Unique contents found after 3 refreshes: 3
+2025-05-27 11:04:29,225 - pages.common_page - INFO - Content visibility status: True
+2025-05-27 11:04:29,225 - common_test - INFO - Dynamic content refresh test passed
+2025-05-27 11:04:35,139 - common_test - INFO - 9. Opening MULTIPLE WINDOWS page !!!
+2025-05-27 11:04:39,537 - pages.common_page - INFO - Clicked Multiple Windows link.
+2025-05-27 11:04:40,069 - pages.common_page - INFO - New window opened with header: New Window
+2025-05-27 11:04:40,103 - common_test - INFO - Multiple Windows test passed
+2025-05-27 11:04:45,489 - test_login - INFO - Test: Valid Login
+2025-05-27 11:04:46,951 - test_login - INFO - Login successful, redirected to inventory page.
+2025-05-27 11:04:48,470 - test_login - INFO - Clicked 'Add to cart' button.
+2025-05-27 11:04:48,501 - test_login - INFO - Assertion passed - Product successfully added to cart.
+2025-05-27 11:04:48,888 - test_login - INFO - Cart page opened successfully.
+2025-05-27 11:04:49,309 - pages.login_page - INFO - Clicked 'Checkout' button.
+2025-05-27 11:04:50,592 - test_login - INFO - Payment made successfully.

@@ -102,3 +102,14 @@ def test_dynamic_content_refresh(driver):
     assert third_content != "", "Third content is empty"
 
     logger.info("Dynamic content refresh test passed")
+
+@pytest.mark.order(9)
+def test_multiple_windows(driver):
+    logger.info("9. Opening MULTIPLE WINDOWS page !!!")
+    driver.get(config.GENERIC_URL)
+
+    multiple_windows_page = MultipleWindowsPage(driver)
+    multiple_windows_page.navigate_to_multiple_windows()
+
+    multiple_windows_page.open_new_window_and_validate_header()
+    logger.info("Multiple Windows test passed")

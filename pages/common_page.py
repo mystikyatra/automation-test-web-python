@@ -2,6 +2,8 @@ import os
 import time
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from utils.logger import setup_logging
 from locators.common_locators import *
 from pages.base_page import BasePage
@@ -170,4 +172,53 @@ class DynamicContentPage(BasePage):
         visible = self.is_element_visible(DynamicContentLocators.CONTENT)
         logger.info(f"Content visibility status: {visible}")
         return visible
-    
+
+# class MultipleWindowsPage(BasePage):
+#     def navigate_to_multiple_windows(self):
+#         self.click(MultipleWindowsLocators.MULTIPLE_WINDOWS_PAGE)
+#         logger.info("Clicked Multiple Windows link.")
+
+#     def open_new_window(self):
+#         original_window = self.driver.current_window_handle
+#         self.click(MultipleWindowsLocators.NEW_TAB_WINDOW)
+#         WebDriverWait(self.driver, 10).until(EC.number_of_windows_to_be(2))
+#         new_window = [window for window in self.driver.window_handles if window != original_window][0]
+#         self.driver.switch_to.window(new_window)
+#         time.sleep(2)
+#         header_element = WebDriverWait(self.driver, 10).until(
+#             EC.visibility_of_element_located(MultipleWindowsLocators.NEW_WINDOW_HEADER)
+#         )
+#         header_text = header_element.text
+#         logger.info(f"New window opened with header: {header_text}")
+#         assert header_text == "New Window", "New window header text does not match expected value."
+#         self.driver.switch_to.window(original_window)
+
+class MultipleWindowsPage(BasePage):
+    def navigate_to_multiple_windows(self):
+        self.click(MultipleWindowsLocators.MULTIPLE_WINDOWS_PAGE)
+        logger.info("Clicked Multiple Windows link.")
+
+    def open_new_window_and_validate_header(self, expected_header="New Window"):
+        original_window = self.driver.current_window_handle
+        self.click(MultipleWindowsLocators.NEW_TAB_WINDOW)
+
+        WebDriverWait(self.driver, 10).until(EC.number_of_windows_to_be(2))
+
+        new_window = next(w for w in self.driver.window_handles if w != original_window)
+        self.driver.switch_to.window(new_window)
+
+        header_text = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(MultipleWindowsLocators.NEW_WINDOW_HEADER)).text
+
+        logger.info(f"New window opened with header: {header_text}")
+        assert header_text == expected_header, (f"Expected header '{expected_header}', but got '{header_text}'.")
+
+        self.driver.close()  # Close new window to keep state clean
+        self.driver.switch_to.window(original_window)
+
+    # # Optional helper for window switching:
+    # def switch_to_new_window(self, original_window):
+    #     WebDriverWait(self.driver, 10).until(EC.number_of_windows_to_be(2))
+    #     new_window = next(w for w in self.driver.window_handles if w != original_window)
+    #     self.driver.switch_to.window(new_window)
+    #     return new_window

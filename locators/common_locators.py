@@ -47,4 +47,11 @@ class DynamicContentLocators:
     REFRESH_CONTENT = (By.LINK_TEXT, "click here")
     CONTENT = (By.CSS_SELECTOR, "div.large-10.columns")
 
+class MultipleWindowsLocators:
+    # Multiple Windows
+    MULTIPLE_WINDOWS_PAGE = (By.LINK_TEXT, "Multiple Windows")
+    NEW_TAB_WINDOW = (By.LINK_TEXT, "Click Here")
+    NEW_WINDOW_HEADER = (By.XPATH, "//h3[text()='New Window']")
+
+
     
