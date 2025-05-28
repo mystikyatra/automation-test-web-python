@@ -218,7 +218,7 @@ class JavaScriptDismissAlertsPage(BasePage):
 
         result_text = self.get_text(JavaScriptDimissAlertsLocators.RESULT_TEXT)
         try:
-            assert result_text == "You clicked: Cancel", f"Unexpected result text: {result_text}"
+            assert result_text == "You clicked: Canc", f"Unexpected result text: {result_text}"
         except AssertionError as e:
             logger.error(f"Assertion failed: {e}")
             raise
