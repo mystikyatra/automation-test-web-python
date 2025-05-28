@@ -2,6 +2,7 @@ import os
 import time
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from utils.logger import setup_logging
@@ -173,26 +174,6 @@ class DynamicContentPage(BasePage):
         logger.info(f"Content visibility status: {visible}")
         return visible
 
-# class MultipleWindowsPage(BasePage):
-#     def navigate_to_multiple_windows(self):
-#         self.click(MultipleWindowsLocators.MULTIPLE_WINDOWS_PAGE)
-#         logger.info("Clicked Multiple Windows link.")
-
-#     def open_new_window(self):
-#         original_window = self.driver.current_window_handle
-#         self.click(MultipleWindowsLocators.NEW_TAB_WINDOW)
-#         WebDriverWait(self.driver, 10).until(EC.number_of_windows_to_be(2))
-#         new_window = [window for window in self.driver.window_handles if window != original_window][0]
-#         self.driver.switch_to.window(new_window)
-#         time.sleep(2)
-#         header_element = WebDriverWait(self.driver, 10).until(
-#             EC.visibility_of_element_located(MultipleWindowsLocators.NEW_WINDOW_HEADER)
-#         )
-#         header_text = header_element.text
-#         logger.info(f"New window opened with header: {header_text}")
-#         assert header_text == "New Window", "New window header text does not match expected value."
-#         self.driver.switch_to.window(original_window)
-
 class MultipleWindowsPage(BasePage):
     def navigate_to_multiple_windows(self):
         self.click(MultipleWindowsLocators.MULTIPLE_WINDOWS_PAGE)
@@ -216,9 +197,80 @@ class MultipleWindowsPage(BasePage):
         self.driver.close()  # Close new window to keep state clean
         self.driver.switch_to.window(original_window)
 
-    # # Optional helper for window switching:
-    # def switch_to_new_window(self, original_window):
-    #     WebDriverWait(self.driver, 10).until(EC.number_of_windows_to_be(2))
-    #     new_window = next(w for w in self.driver.window_handles if w != original_window)
-    #     self.driver.switch_to.window(new_window)
-    #     return new_window
+class JavaScriptAlertsPage(BasePage):
+    def navigate_to_js_alerts(self):
+        self.click(JavaScriptAlertsLocators.JS_ALERTS_PAGE)
+        logger.info("Clicked JavaScript Alerts link.")
+
+    def click_js_alert_button(self):
+        self.click(JavaScriptAlertsLocators.JS_ALERT_BUTTON)
+        logger.info("Clicked JS Alert button.")
+        self.accept_alert()
+
+class JavaScriptDismissAlertsPage(BasePage):
+    def click_js_dismiss_alert_button(self):
+        self.click(JavaScriptAlertsLocators.JS_ALERTS_PAGE)
+        logger.info("Clicked JavaScript Alerts link.")
+
+        self.click(JavaScriptDimissAlertsLocators.JS_DISMISS_ALERT_BUTTON)
+        logger.info("Clicked JS Dismiss Alert button.")
+        self.dismiss_alert()
+
+        result_text = self.get_text(JavaScriptDimissAlertsLocators.RESULT_TEXT)
+        try:
+            assert result_text == "You clicked: Cancel", f"Unexpected result text: {result_text}"
+        except AssertionError as e:
+            logger.error(f"Assertion failed: {e}")
+            raise
+        logger.info("Alert dismissed successfully.")
+
+class JSPromptPage(BasePage):
+    def open_and_handle_prompt(self, input_text):
+        self.click(JavaScriptAlertsLocators.JS_ALERTS_PAGE)
+        logger.info("Clicked JavaScript Alerts link.")
+
+        self.click(JavaScriptPromptAlertsLocators.JS_PROMPT_ALERT_BUTTON)
+        self.send_text_to_alert(input_text, accept=True)
+        logger.info(f"Entered text '{input_text}' into prompt and accepted.")
+
+    def get_result_text(self, expected_text):
+        actual_result = self.get_text(JavaScriptPromptAlertsLocators.RESULT_TEXT)
+        logger.info(f"Prompt result text on page: '{actual_result}'")
+        expected_result = f"You entered: {expected_text}"
+        assert actual_result == expected_result, (
+            f"Expected '{expected_result}', but got '{actual_result}'"
+        )
+        logger.info("Prompt result text assertion passed.")
+        return actual_result
+
+class EditorPage(BasePage):
+    def verify_typos_menu_visible(self):
+        element = self.scroll_to_element(VerticalScrollBarLocators.TYPOS_MENU)
+        assert element.is_displayed(), "TYPOS_MENU is not visible after scrolling."
+        self.click(VerticalScrollBarLocators.TYPOS_MENU)
+        logger.info("TYPOS_MENU is visible and asserted successfully.")
+
+class HorizontalSliderPage(BasePage):
+    def set_slider_value(self, target_value):
+        self.click(HorizontalSliderLocators.HORIZONTAL_SLIDER_PAGE)
+        logger.info("Clicked Horizontal Slider link.")
+
+        slider = self.driver.find_element(*HorizontalSliderLocators.RANGE_SLIDER)
+        target_value = float(target_value)
+        step = 0.5
+
+        # Click slider to focus
+        slider.click()
+
+        # Adjust value via ARROW_RIGHT
+        current_value = float(self.driver.find_element(*HorizontalSliderLocators.SLIDER_VALUE).text)
+        offset = int((target_value - current_value) / step)
+
+        for _ in range(abs(offset)):
+            slider.send_keys(Keys.ARROW_RIGHT if offset > 0 else Keys.ARROW_LEFT)
+
+        # Wait until value updates
+        WebDriverWait(self.driver, 5).until(
+            lambda d: float(d.find_element(*HorizontalSliderLocators.SLIDER_VALUE).text) == target_value
+        )
+        logger.info(f"Slider moved to value: {target_value}")

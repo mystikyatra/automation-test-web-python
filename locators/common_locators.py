@@ -53,5 +53,27 @@ class MultipleWindowsLocators:
     NEW_TAB_WINDOW = (By.LINK_TEXT, "Click Here")
     NEW_WINDOW_HEADER = (By.XPATH, "//h3[text()='New Window']")
 
+class JavaScriptAlertsLocators:
+    # JavaScript Alerts
+    JS_ALERTS_PAGE = (By.LINK_TEXT, "JavaScript Alerts")
+    JS_ALERT_BUTTON = (By.XPATH, "//button[text()='Click for JS Alert']")
 
-    
+class JavaScriptDimissAlertsLocators:
+    # JavaScript Dismiss Alerts
+    JS_DISMISS_ALERT_BUTTON = (By.XPATH, "//button[text()='Click for JS Confirm']")
+    RESULT_TEXT = (By.ID, "result")
+
+class JavaScriptPromptAlertsLocators:
+    # JavaScript Prompt Alerts
+    JS_PROMPT_ALERT_BUTTON = (By.XPATH, "//button[text()='Click for JS Prompt']")
+    RESULT_TEXT = (By.ID, "result")
+
+class VerticalScrollBarLocators:
+    # Vertical Scroll Bar
+    TYPOS_MENU = (By.LINK_TEXT, "WYSIWYG Editor")
+
+class HorizontalSliderLocators:
+    # Horizontal Slider
+    HORIZONTAL_SLIDER_PAGE = (By.LINK_TEXT, "Horizontal Slider")
+    RANGE_SLIDER = (By.XPATH, "//input[@type='range' and @min='0.0' and @max='5.0']")
+    SLIDER_VALUE = (By.ID, "range")

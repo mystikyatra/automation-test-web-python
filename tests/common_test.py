@@ -113,3 +113,60 @@ def test_multiple_windows(driver):
 
     multiple_windows_page.open_new_window_and_validate_header()
     logger.info("Multiple Windows test passed")
+
+@pytest.mark.order(10)
+def test_javascript_alerts(driver):
+    logger.info("10. Opening CLICK FOR JS ALERTS BUTTON page !!!")
+    driver.get(config.GENERIC_URL)
+
+    js_alerts_page = JavaScriptAlertsPage(driver)
+    js_alerts_page.navigate_to_js_alerts()
+    js_alerts_page.click_js_alert_button()
+    logger.info("JavaScript Alerts test passed")
+
+@pytest.mark.order(11)
+def test_javascript_dismiss_alerts(driver):
+    logger.info("11. Opening CLICK FOR JS DISMISS ALERTS BUTTON page !!!")
+    driver.get(config.GENERIC_URL)
+
+    js_dismiss_alerts_page = JavaScriptDismissAlertsPage(driver)
+    js_dismiss_alerts_page.click_js_dismiss_alert_button()
+    logger.info("JavaScript Dismiss Alerts test passed")
+
+@pytest.mark.order(12)
+def test_prompt_alert(driver):
+    logger.info("12. Opening JS PROMPT ALERTS page !!!")
+    driver.get(config.GENERIC_URL)
+    
+    js_prompt_page = JSPromptPage(driver)
+    input_text = "Exit Prompt"
+    js_prompt_page.open_and_handle_prompt(input_text)
+    result = js_prompt_page.get_result_text(input_text)
+    
+    assert result == f"You entered: {input_text}"
+    logger.info("JavaScript Prompt Alerts test passed with result.")
+
+@pytest.mark.order(13)
+def test_scroll_to_typos_menu(driver):
+    logger.info("13. VERTICAL SCROLL and assert !!!")
+    driver.get(config.GENERIC_URL)
+
+    editor_page = EditorPage(driver)
+    editor_page.verify_typos_menu_visible()
+    logger.info("Vertical Scroll Bar test passed, 'WYSIWYG Editor' menu is visible.")
+
+@pytest.mark.order(14)
+def test_slider_moves_to_expected_value(driver):
+    logger.info("14. HORIZONTAL SLIDER page !!!")
+    driver.get(config.GENERIC_URL)
+
+    slider_page = HorizontalSliderPage(driver)
+    target_value = 3.5
+    slider_page.set_slider_value(target_value)
+
+    # Get the actual slider value after movement
+    actual_value = float(slider_page.get_text(HorizontalSliderLocators.SLIDER_VALUE))
+    
+    # Assert the value matches expected
+    assert actual_value == target_value, f"Expected slider value {target_value}, but got {actual_value}"
+    logger.info("Horizontal Slider test passed, slider moved to expected value.")
