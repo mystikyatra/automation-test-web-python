@@ -3,7 +3,7 @@ git init
 git add README.md
 git commit -m "first commit"
 git branch -M master
-git remote add origin https://github.com/mystikyatra/automation-test-web-python.git
+git remote add origin https://github.com/username/project-name.git
 git push -u origin master
 
 # Activate venv
@@ -19,7 +19,6 @@ PS D:\automation-tst-projects\automation-test-web-python> powershell.exe -Execut
 # Run automation tests
     1. Whole test programs: python -m pytest
     2. Run specific test file only: python -m pytest .\tests\common_test.py
-    3. Run specific funtion only: 
 
 # Install requirements.txt
 pip install -r .\requirements.txt
